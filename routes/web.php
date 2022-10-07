@@ -24,3 +24,7 @@ Route::get('/alpha', function () {
 Route::get('/beta', function () {
     return view('beta');
 });
+
+Route::get('/omega', function () {
+    return view('omega');
+});

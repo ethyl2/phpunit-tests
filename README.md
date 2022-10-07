@@ -1,3 +1,23 @@
+
+Run phpunit tests by typing in the terminal:
+
+./vendor/bin/phpunit
+
+
+OR install the Better PHPUnit VS Code extension: https://github.com/calebporzio/better-phpunit
+
+Then
+
+To run a test method, place your cursor in/on the method and either
+  - cmd+k cmd+r
+  - cmd+shift+p then select Better PHPUnit: run
+
+To run a test file, either
+  - cmd+k cmd+r
+  - cmd+shift+p then select Better PHPUnit: run-file
+
+----------------------------
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
