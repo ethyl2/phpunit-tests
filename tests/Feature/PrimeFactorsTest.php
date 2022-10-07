@@ -72,7 +72,7 @@ class PrimeFactorsTest extends TestCase
     public function testWithDataProvider($output, $input)
     {
         $factors = new PrimeFactors;
-        var_dump($input);
+        // var_dump($input);
         $this->assertEquals($output, $factors->generate($input));
     }
 
