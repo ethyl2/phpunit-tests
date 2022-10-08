@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Exception;
 use Tests\TestCase;
-use App\RomanNumerals;
+use App\RomanNumeralConverter;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -18,8 +18,9 @@ class RomanNumeralsTest extends TestCase
      */
     public function test_it_throws_exception_for_negative_numbers()
     {
+      $romanNumeralConverter = new RomanNumeralConverter;
       $this->expectException(Exception::class);
-      $test = RomanNumerals::generate(-1);
+      $test = $romanNumeralConverter->generate(-1);
     }
 
     /**
@@ -30,8 +31,9 @@ class RomanNumeralsTest extends TestCase
      */
     public function test_it_throws_exception_for_zero()
     {
+      $romanNumeralConverter = new RomanNumeralConverter;
       $this->expectException(Exception::class);
-      $test = RomanNumerals::generate(0);
+      $test = $romanNumeralConverter->generate(0);
     }
 
 
@@ -43,7 +45,8 @@ class RomanNumeralsTest extends TestCase
      */
     public function test_it_generates_the_roman_numeral_for_data_provider_items($input, $output)
     {
-        $this->assertEquals($output, RomanNumerals::generate($input));
+        $romanNumeralConverter = new RomanNumeralConverter;
+        $this->assertEquals($output, $romanNumeralConverter->generate($input));
     }
 
     public function correctItems()
@@ -51,7 +54,16 @@ class RomanNumeralsTest extends TestCase
       return [
         [1, 'I'],
         [2, 'II'],
-        [3, 'III']
+        [3, 'III'],
+        [4, 'IV'],
+        [5, 'V'],
+        [9, 'IX'],
+        [11, 'XI'],
+        [20, 'XX'],
+        [29, 'XXIX'],
+        [54, 'LIV'],
+        [1999, 'MCMXCIX'],
+        [2018, 'MMXVIII']
       ];
     }
 }
