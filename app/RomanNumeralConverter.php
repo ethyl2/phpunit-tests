@@ -60,6 +60,10 @@ class RomanNumeralConverter
         throw new Exception('Number is out of range.');
       }
 
+      if (!is_int($number)) {
+        throw new Exception('Number is not an integer.');
+      }
+
       $numberStringArray = array_reverse(str_split(strval($number)));
       $romanNumeral = '';
 
@@ -67,6 +71,7 @@ class RomanNumeralConverter
         $romanNumeral = $this->numeralToRoman[$index][$value] . $romanNumeral;
       }
 
+      var_dump(4.44 % 1);
       return $romanNumeral;
     }
 }

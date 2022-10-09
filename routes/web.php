@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RomanNumeralsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,8 @@ Route::get('/beta', function () {
 Route::get('/omega', function () {
     return view('omega');
 });
+
+Route::get('/roman-numerals', [RomanNumeralsController::class, 'index']);
+
+Route::post('/roman-numerals', [RomanNumeralsController::class, 'store']);
+
